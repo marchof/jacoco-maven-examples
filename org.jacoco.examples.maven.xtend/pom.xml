@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright (c) 2009, 2012 Mountainminds GmbH & Co. KG and Contributors
+   All rights reserved. This program and the accompanying materials
+   are made available under the terms of the Eclipse Public License v1.0
+   which accompanies this distribution, and is available at
+   http://www.eclipse.org/legal/epl-v10.html
+
+   Contributors:
+      Evgeny Mandrikov - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.jacoco</groupId>
+  <artifactId>org.jacoco.examples.maven.xtend</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>JaCoCo Maven plug-in example for Xtend project</name>
+  <url>http://www.eclemma.org/jacoco</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.xtend</groupId>
+      <artifactId>org.eclipse.xtend.lib</artifactId>
+      <version>2.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/xtend</sourceDirectory>
+    <testSourceDirectory>src/test/xtend</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.xtend</groupId>
+        <artifactId>xtend-maven-plugin</artifactId>
+        <version>2.3.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/xtend-gen/main</outputDirectory>
+              <testOutputDirectory>${project.build.directory}/xtend-gen/test</testOutputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.5.8.201207111220</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>xtend</id>
+      <url>http://build.eclipse.org/common/xtend/maven/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>xtend</id>
+      <url>http://build.eclipse.org/common/xtend/maven/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>
