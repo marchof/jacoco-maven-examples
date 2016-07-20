@@ -26,7 +26,7 @@
 		<maven.compiler.source>1.5</maven.compiler.source>
 		<maven.compiler.target>1.5</maven.compiler.target>
 		<encoding>UTF-8</encoding>
-		<scala.version>2.9.2</scala.version>
+		<scala.version>2.11.8</scala.version>
 	</properties>
 
 	<dependencies>
