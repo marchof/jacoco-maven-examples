@@ -21,7 +21,7 @@
   <url>http://www.eclemma.org/jacoco</url>
 
   <properties>
-    <kotlin.version>1.0.3</kotlin.version>
+    <kotlin.version>1.1.50</kotlin.version>
   </properties>
 
   <dependencies>
@@ -31,9 +31,15 @@
       <version>${kotlin.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-test</artifactId>
+      <version>${kotlin.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.10</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -72,17 +78,11 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.7.7.201606060606</version>
+        <version>0.7.9</version>
         <executions>
           <execution>
             <goals>
               <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>report</id>
-            <phase>prepare-package</phase>
-            <goals>
               <goal>report</goal>
             </goals>
           </execution>

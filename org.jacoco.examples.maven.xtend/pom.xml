@@ -21,7 +21,7 @@
   <url>http://www.eclemma.org/jacoco</url>
 
   <properties>
-    <xtend.version>2.10.0</xtend.version>
+    <xtend.version>2.13.0</xtend.version>
   </properties>
 
   <dependencies>
@@ -33,7 +33,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.10</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -62,17 +62,11 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.7.7.201606060606</version>
+        <version>0.7.9</version>
         <executions>
           <execution>
             <goals>
               <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>report</id>
-            <phase>prepare-package</phase>
-            <goals>
               <goal>report</goal>
             </goals>
           </execution>
